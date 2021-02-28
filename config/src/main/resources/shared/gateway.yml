@@ -26,3 +26,18 @@ spring:
       discovery:
         locator:
           enabled: false
+  routes:
+    keycloak:
+        path: /auth/**
+        stripPrefix: false
+        sensitiveHeaders: true
+        url: http://localhost:8089/
+    accounts-service:
+        path: /api/accounts/**
+        stripPrefix: false
+        sensitiveHeaders: false
+
+    delivery-service:
+        path: /delivery-service/**
+        stripPrefix: true
+ 
